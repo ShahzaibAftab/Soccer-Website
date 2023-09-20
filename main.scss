@@ -1,0 +1,2593 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    // box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    transition: 0.3s;
+    // font-family: 'Bebas Neue', sans-serif;
+
+}
+html{
+    scroll-behavior: smooth;
+}
+
+:root{
+    --primaryColor: #37003c;
+    --secondaryColor: #fe2882;
+    --thirdColor: #11b6d0;
+    --hoverColor: #260229;
+    --bgColor: #963bfe;
+    --whiteColor: #ffffff;
+    --greyTexts: #807a82;
+    --blackColor:#160331;
+    --greyColor: rgb(241, 241, 241);
+    --borderRadius: 3px;
+    --linearGradient: linear-gradient(to right, #963bfe,#fe2882);
+    --fontSize_13px: 13px;
+    --boxShadow: 0px 2px 2px var(--greyColor);
+    
+}
+
+*,::before, ::after{
+    box-sizing: border-box;
+}
+
+body{
+   
+    background: var(--whiteColor);
+}
+::html{
+    font-size: 80%;
+}
+
+// RESUABlE CSS =======================>
+a{
+    text-decoration: none;
+    cursor: pointer;
+}
+h1,h2{
+    color: var(--primaryColor);
+}
+span{
+    font-size: var(--fontSize_13px);
+}
+li{
+    list-style: none;
+}
+.grid{
+    display: grid;
+    gap: 1.5rem;
+}
+
+.flex{
+    display: flex;
+    align-items: center;
+}
+.section{
+    padding: 2rem 0 2rem;
+}
+.container{
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+.opacity{
+    opacity: .5;
+}
+p{
+    font-size: 90%;
+}
+.btn{
+    background: var(--secondaryColor);
+    color: var(--primaryColor);
+    text-transform: uppercase;
+    font-weight: 400;
+    padding: 10px 5px;
+    cursor: pointer;
+}
+.button{
+    padding: 10px 20px;
+    background: var(--greyColor);
+    width: max-content;
+    margin: 1rem auto;
+    border-radius: var(--borderRadius);
+    border: 2px solid transparent;
+   
+    a{
+        font-size: var(--fontSize_13px);
+        color: var(--primaryColor);
+        text-transform: uppercase;
+        font-weight: 500;
+    }
+}
+.icon{
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0 2px;
+}
+
+img{
+    width: 100%;
+    height: auto;
+}
+
+.sectionIntro{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    
+}
+.subTitle{
+    font-size: 15px;
+}
+
+.logo{
+    width: 90px;
+    height: auto;
+}
+.teamLogo{
+    width: 40px;
+    height: auto;
+}
+.detailsLink{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    margin-top: 1.5rem;
+    a{
+        font-size: var(--fontSize_13px);
+        font-weight: 600;
+        .icon{
+            color: var(--secondaryColor);
+            transform: translateY(-5px);
+        }
+
+        &:hover{
+            color: var(--secondaryColor);
+            .icon{
+                transform: translateX(5px);
+            }
+        }
+    }
+}
+
+.sectionHeader{
+    padding: 10px 0;
+    box-shadow: var(--boxShadow);
+    margin-bottom: 1rem;
+    .newsTitle{
+        font-size: 15px;
+        font-weight: 600;
+
+    }
+}
+
+
+
+// HEADER SCSS =================================>
+.header{
+    position: fixed;
+    width: 100%;
+    display: grid;
+    align-items: center;
+    gap: 0;
+    z-index: 1000;
+    top: 0;
+    
+    .topSection{
+        display: none;
+        align-items: center;
+        justify-content: center;
+        column-gap: .8rem;
+        padding: .5rem 0;
+        background: var(--whiteColor);
+        // border-top: 2px solid var(--primaryColor);
+        z-index: 1000;
+
+        img{
+            width: 40px;
+            height: auto;
+        }
+      
+    }
+    .lowerSection{
+
+        display: flex;
+        align-items: center;
+        width: 100%;
+        justify-content: space-between;
+        background: var(--primaryColor);
+        padding: 10px 1rem;
+        z-index: 1000;
+        .logo{
+            width: 90px;
+            height: auto;
+            filter: invert(1);
+        }
+
+        .logInBtn a{
+            color: var(--whiteColor);
+            font-weight: 500;
+            font-size: var(--fontSize_13px);
+        }
+        .navBarBtn .icon{
+           font-size: 30px;
+           cursor: pointer;
+           color: var(--whiteColor);
+           &:hover{
+               color: var(--secondaryColor);
+           }
+        }
+
+        @media screen and (max-width: 768px){
+            .navBar{
+                position: absolute;
+                width: 80%;
+                background: var(--greyColor);
+                height: max-content;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                padding: 1rem 0;
+                left: 50%;
+                right: 50%;
+                top: -20rem;
+                border-radius: 3px;
+                transform: translate(-50%, -50%);
+                z-index: 100;
+                box-shadow: 0 2px 8px var(--greyTexts);
+                .navList{
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+                  
+                    .navItem{
+                        padding: .5rem;
+                        width: 100%;
+                        text-align: center;
+                        &:hover{
+                            background: var(--linearGradient);
+                            .navLink{
+                                color: var(--whiteColor);
+                                font-weight: 600;
+                                
+                            }
+
+                        }
+
+                        .navLink{
+                            font-weight: 500;
+                            color: var(--blackColor);
+                            
+                        }
+                        
+                    }
+                }
+
+                .button{
+                    width: 80%;
+                    text-align: center;
+                    background: var(--primaryColor);
+                    &:hover{
+                        background: var(--secondaryColor);
+                    }
+                    a{
+                        color: var(--whiteColor);
+                    }
+                }
+
+                small{
+                    color: var(--primaryColor);
+                }
+            }
+            .show{
+                transition: .3s ease;
+                top: 18rem;
+            }
+        }
+    }
+}
+
+
+// Banner CSS =====================================>
+.bannerSection{
+    position: relative;
+    height: 90vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.437), rgb(59, 54, 75)), url(./assets/img8.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: auto;
+    justify-content: center;
+    padding: 1rem;
+
+    .title{
+        color: var(--whiteColor);
+        padding: 1rem 0 ;
+    }
+    .subTitle{
+        color: var(--greyColor);
+
+    }
+
+}
+
+// About Section ==============================>
+.aboutSection{
+    .textDiv{
+        padding-left: 1rem;
+        border-left: 3px solid var(--primaryColor);
+        h2{
+            padding-bottom:1rem;
+        }
+        .button{
+            margin-left: 0;
+            background: var(--primaryColor);
+            a{
+                color: var(--whiteColor);
+            }
+            &:hover{
+                background: transparent;
+                border: 2px solid var(--hoverColor);
+            }
+        }
+    }
+
+    .aboutSectionImageDiv{
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+        &:hover{
+            img{
+                transform: scale(1.1);
+            }
+        }
+        img{
+            // height: 100%;
+            object-fit: cover;
+        }
+    }
+
+}
+
+// League Log Section CSS ==================================>
+.logSection, .fixturesSection, .resultsSection{
+    width: 100%;
+    .sectionContainer{
+        width: 100%;
+        .sectionContent{
+            width: 100%;
+            margin: auto;
+            height: max-content; 
+            text-align: center;
+    
+            .fixtureDiv, .resultsDiv{
+                width: 100%;
+                border-top: 7px solid;
+                border-image-slice: 1;
+                padding-top: 1rem;
+                border-image-source: var(--linearGradient);
+                box-shadow: var(--boxShadow);
+                padding-bottom: 1rem;
+                border-radius: var(--borderRadius);
+              .matchNumber{
+                  display: block;
+                  padding: 10px;
+                  font-size: var(--fontSize_13px);
+                  font-weight: 600;
+                  color: var(--secondaryColor);
+              }
+              small{
+                 
+                  opacity: .7;
+                  font-size: var(--fontSize_13px);
+                 
+              }
+
+              .date{
+                display: block;
+                padding:  5px 0;
+                background: var(--greyColor);
+                margin: 1rem 0;
+                border-radius: var(--borderRadius);
+                width: 100%;
+                font-weight: 600;
+                font-size: var(--fontSize_13px);
+  
+            }
+    
+             .iconDiv{
+                 .icon{
+                     font-size: 3rem;
+                     font-weight: 700;
+                 }
+             }
+
+              .allFixtures, .allResults{
+                  width: 100%;
+                  display: grid;
+                  align-items: center;
+                  justify-content: center;
+                  margin: auto;
+                  gap: .5rem;
+                  
+
+                
+              }
+              .singleFixture, .singleResult{
+                display: grid;
+                align-items: center;
+                justify-content: center;
+               margin: auto;
+              &:hover{
+      
+                  .time{
+                      color: var(--whiteColor);
+                      background: var(--primaryColor) !important;
+                      border-radius: var(--borderRadius);
+                  }
+                  .venue{
+                      transform: translateY(-10px);
+
+                  }
+                 
+
+              }
+              .teams{
+                  width: 100%;
+                  margin: 1rem auto;
+                  justify-content: center;
+                  align-items: center;
+                 
+                  .teamName_teamLogo{
+                      .name{
+                          font-weight: 600;
+                          font-size: 13px;
+                          text-transform: capitalize;
+                      }
+                      .teamLogoDiv{
+                         margin: 0 8px;
+                         height: 40px;
+                         width: 40px;
+                         img{
+                             height: 100%;
+                             width: 100%;
+                             object-fit: cover;
+                         }
+  
+                      }
+                  }
+                  .time{
+                      background: var(--greyColor);
+                      padding: 5px 9px;
+                      border-radius: var(--borderRadius);
+
+                  }
+  
+              }
+  
+             .venue{
+                 font-size: var(--fontSize_13px);
+                 display: block;
+             } 
+            }
+    
+               
+               .fullFixtureLink{
+                   display: flex;
+                   align-items: center;
+                   justify-content: end;
+                   margin-top: 1.5rem;
+                   a{
+                       font-size: var(--fontSize_13px);
+                       font-weight: 600;
+                       .icon{
+                           color: var(--secondaryColor);
+                       }
+    
+                       &:hover{
+                           color: var(--secondaryColor);
+                           .icon{
+                               transform: translateX(5px);
+                           }
+                       }
+                   }
+               }
+            }
+            .resultsDiv{
+                border-top: 7px solid;
+                border-image-slice: 1;
+                padding-top: 1rem;
+                border-image-source: var(--linearGradient);
+                box-shadow: var(--boxShadow);
+                padding-bottom: 1rem;
+                border-radius: var(--borderRadius);
+              .matchNumber{
+                  display: block;
+                  padding: 10px;
+                  font-size: var(--fontSize_13px);
+                  font-weight: 600;
+                  color: var(--secondaryColor);
+              }
+              small{
+                 
+                  opacity: .7;
+                  font-size: var(--fontSize_13px);
+                 
+              }
+    
+              .date{
+                  display: block;
+                  padding:  5px 0;
+                  background: var(--greyColor);
+                  margin: 1rem 0;
+                  border-radius: var(--borderRadius);
+                  width: 100%;
+                  font-weight: 600;
+                  font-size: var(--fontSize_13px);
+    
+              }
+    
+                .teams{
+                    width: 100%;
+                    margin: 1rem auto;
+                    justify-content: center;
+                    align-items: center;
+                    .teamName_teamLogo{
+                        .name{
+                            font-weight: 600;
+                            font-size: 15px;
+                            text-transform: capitalize;
+                        }
+                        .teamLogoDiv{
+                           margin: 0 8px;
+                           height: 40px;
+                           width: 40px;
+                           img{
+                               height: 100%;
+                               width: 100%;
+                               object-fit: cover;
+                           }
+    
+                        }
+                    }
+                    .results{
+                        background: var(--greyColor);
+                        padding: 5px 9px;
+                        font-weight: 500;
+                    }
+    
+                }
+    
+               .venue{
+                   font-size: var(--fontSize_13px);
+               } 
+               .fullFixtureLink{
+                   display: flex;
+                   align-items: center;
+                   justify-content: end;
+                   margin-top: 1.5rem;
+                   a{
+                       font-size: var(--fontSize_13px);
+                       font-weight: 600;
+                       .icon{
+                           color: var(--secondaryColor);
+                       }
+    
+                       &:hover{
+                           color: var(--secondaryColor);
+                           .icon{
+                               transform: translateX(5px);
+                           }
+                       }
+                   }
+               }
+            }
+    
+            .tableDiv{
+                padding-bottom: 1rem;
+                box-shadow: var(--boxShadow);
+                .tableLogoDiv{
+                    padding: 1rem 0;
+                    background: var(--primaryColor);
+                    .logo{
+                        filter: invert(1);
+                    }
+    
+                }
+                .table{
+                    table{
+                        border-collapse: collapse;
+                        // border-spacing: 0 1rem ;
+                        border: none;
+                        width: 100%;
+                        
+                    }
+                    th{
+                       padding: 10px 0 15px;
+                       font-size: var(--fontSize_13px);
+                       color: var(--greyTexts);
+                       font-weight: 500;
+                      
+                    }
+                    td{
+                        border-radius: var(--borderRadius);
+                        padding: .8rem .5rem;
+                        box-shadow: var(--boxShadow);
+                        font-size: var(--fontSize_13px);
+                    }
+    
+                    .red{
+                        background: rgb(235, 104, 104);
+                    }
+                    .green{
+                      
+                        background: rgb(154, 244, 172);
+                    }
+                    
+                    .leader{
+                        background: rgb(109, 222, 132);
+    
+                    }
+    
+                    
+                    .tr{
+                       .pos, .points ,.name{
+                           font-weight: 600;
+                       } 
+                       .teamLogoDiv{
+                        margin: 0 8px;
+                        height: 30px;
+                        width: 30px;
+                        img{
+                            height: 100%;
+                            width: 100%;
+                            object-fit: cover;
+                        }
+    
+                     }
+                       
+                    }
+                    .detailsLink{
+                        display: flex;
+                        align-items: center;
+                        justify-content: end;
+                        margin-top: 1.5rem;
+                        a{
+                            font-size: var(--fontSize_13px);
+                            font-weight: 600;
+                            .icon{
+                                color: var(--secondaryColor);
+                            }
+         
+                            &:hover{
+                                color: var(--secondaryColor);
+                                .icon{
+                                    transform: translateX(5px);
+                                }
+                            }
+                        }
+                    }
+                    
+                }
+            }
+    
+        }
+    }
+    
+}
+
+// Weekly Team section SCSS =========================================================>
+.weeklyTeam{
+    .menDiv{
+        .topScorer, .pow, .tow{
+            width: 100%;
+            display: grid;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            border-radius: var(--borderRadius);
+            box-shadow: var(--boxShadow);
+            border-top: 7px solid;
+            border-image-slice: 1;
+            padding-top: 1rem;
+            border-image-source: var(--linearGradient);
+             overflow: hidden;
+
+
+                .matchNumber{
+                    display: block;
+                    padding: 10px;
+                    font-size: var(--fontSize_13px);
+                    font-weight: 600;
+                    color: var(--secondaryColor);
+                }
+                small{
+                   
+                    opacity: .7;
+                    font-size: var(--fontSize_13px);
+                
+                   
+                }
+                .menTitle{
+                    display: block;
+                    padding:  5px 0;
+                    background: var(--greyColor);
+                    margin: 1rem 0;
+                    border-radius: var(--borderRadius);
+                    width: 100%;
+                    font-weight: 600;
+                    font-size: var(--fontSize_13px);
+      
+                }
+            
+           .imgDiv{
+            position: relative;
+            height: 180px;
+            width: auto;
+            overflow: hidden;
+            &:hover{
+                img{
+                    transform: scale(1.1);
+                }
+            }
+            img{
+                position: absolute;
+                width: 100%;
+                height: fit-content;
+                top: 0;
+                right: 0;
+                left: 0;
+                
+                
+            }
+           }
+           .infoDiv{
+               background: var(--linearGradient);
+               color: var(--whiteColor);
+               width: 100%;
+              
+               padding: 1rem ;
+               .honor{
+                   font-weight: 600;
+                   font-size: 16px;
+                   float: left;
+                   text-align: start;
+                   margin-bottom: 10px;
+               }
+               .topScorerText{
+                   text-align: start;
+                   float: left;
+               }
+              
+           }
+        }
+        .tow{
+            
+            .menTitle{
+                display: block;
+                padding:  5px 0;
+                background: var(--greyColor);
+                margin: 1rem 0;
+                border-radius: var(--borderRadius);
+                width: 100%;
+                font-weight: 600;
+                font-size: var(--fontSize_13px);
+                text-align: center;
+  
+            }
+            .imgsDiv{
+                width: 100%;
+                display: grid;
+                margin: auto;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                grid-template-columns:repeat(3, 1fr) ;
+                gap: 10px;
+              
+                .singleplayer{
+                    position: relative;
+                    height: 100px;
+                    width: 90px;
+                    background: #11b6d0;
+                    border-radius: var(--borderRadius);
+                    overflow: hidden;
+                    &:hover{
+                        .playerName{
+                            top: 0;
+                            transition: .3s ease;
+                        }
+                    }
+                    .playerName{
+                        position: absolute;
+                        top: 100%;
+                        justify-content: center;
+                        align-items: center;
+                        margin: auto;
+                        height: 100%;
+                        width: 100%;
+                        background: linear-gradient(to top, #37003c,#37003c28);
+                        .name{
+                            color: var(--whiteColor);
+                            font-weight: 500;
+                            text-align: center;
+                            blockquote{
+                                font-weight: 700;
+                                font-size: 15px;
+                            }
+                        }
+                    }
+                    .playerImg{
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        top: 0;
+                        right: 0;
+                        left: 0;
+                        bottom: 0;
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+// Middle Banner section SCSS ==========================>
+.middleBanner{
+    height: 400px;
+    width: 100%;
+    background:  linear-gradient(to top, #3f2b56bc,#3f2b56d0), url(./assets/klImages/celebrations.jpg);
+    background-attachment: fixed;
+    background-position:center ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    
+    .sectionText{
+        h1{
+            color: var(--whiteColor);
+            font-weight: 800;
+            text-align: center;
+
+        }
+        .button{
+            border: 2px solid var(--whiteColor);
+            background: transparent;
+            &:hover{
+              background: var(--whiteColor);
+              a{
+                  color: var(--primaryColor);
+              }
+            }
+            a{
+                color: var(--whiteColor);
+            }
+        }
+    }
+}
+
+
+// sponsors section scss================================================================>
+.sponsors{
+    margin: 1rem 0;
+    .sponsorsContainer{
+        padding: 2rem 1rem ;
+        position: relative;
+
+        .sponsor{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .swiperImg{
+             width:100%;
+             height: auto;
+             filter: invert(1);
+             opacity: .5;
+             &:hover{
+                 opacity: 1;
+             }
+            }
+        }
+    }
+
+
+}
+
+// News Section css =========================================================================>
+.newsSection{
+    position: relative;
+    border-top: 20px solid var(--primaryColor);
+    
+    &::after{
+        position: absolute;
+        content: '';
+        height: 5px;
+        width: 80%;
+        background: var(--linearGradient) ;
+        top: -5px;
+        left: 50%;
+        right: 50%;
+        transform: translate(-50%);
+    }
+    
+    .newContent{
+        .singlePost{
+           max-width: 100%;
+            gap: .5rem;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 10px;
+
+            .postImg{
+                height: 100px;
+                width: 150px;
+                background: var(--greyColor);
+                img{
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+            .newsTxt{
+                width: 100%;
+                .title{
+                    color: var(--secondaryColor);
+                    font-weight: 600;
+                    display: block;
+                    padding:10px 0 ;
+                    font-style: italic;
+                }
+                p {
+                    position: relative;
+                    width: 100%;
+                    height: 55px;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    &::after{
+                        content: '';
+                        height: 100%;
+                        width: 100%;
+                        background: linear-gradient(rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.99));
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        filter: blur(1px);
+                    }
+                    
+               }
+            }
+        }
+
+       
+    }
+    .hide{
+        display: none;
+    }
+
+   
+}
+
+.detailsBox{
+    position: fixed;
+    height: 100vh;
+    z-index: 1000;
+    background: #000000cb;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    
+    .detailsContainer{
+        position: relative;
+      padding: 1rem;
+      background-color: var(--whiteColor);
+      width: max-content;
+      display: grid;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      width: 400px;
+      border-radius: var(--borderRadius);
+      border-bottom: 5px solid;
+      border-image-slice: 1;
+      border-image-source: var(--linearGradient);
+      overflow: hidden;
+      .icon{
+          height: 40px;
+          width: 40px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 50%;
+          position: absolute;
+          background: var(--whiteColor);
+          color: var(--secondaryColor);
+          top: 0px;
+          right: 50%;
+          left: 50%;
+          transform: translate(-50%);
+          font-size: 18px;
+          &:hover{
+              color: var(--primaryColor);
+          }
+      }
+      .detailsImg{
+          width: 50%px;
+          height: auto;
+          margin: 0 auto 1rem;
+          border-radius: var(--borderRadius);
+      }
+      span{
+          padding: 0 .5rem 1rem ;
+          max-width: 400px;
+          
+      }
+      .desc{
+          max-height: 200px;
+          overflow-y: auto;
+      }
+      
+      ::-webkit-scrollbar{
+          width: 4px;
+          background: var(--greyColor);
+        }
+        
+        ::-webkit-scrollbar-thumb{
+          border-radius: var(--borderRadius);
+          background-color: var(--secondaryColor);
+      }
+
+      .title{
+          color: var(--greyTexts);
+          font-weight: 600;
+      }
+      small{
+          width: 80%;
+          margin: auto;
+          padding-top: .5rem ;
+          color: var(--greyTexts);
+          border-top: 1px solid rgb(198, 197, 197);
+      }
+    }
+
+
+}
+.seeDetails{
+    display: flex;
+    transition: all .3s ease;
+}
+
+// Gallery section scss ===================================================>
+.gallerySection{
+    position: relative;
+    border-top: 20px solid var(--primaryColor);
+    
+    &::after{
+        position: absolute;
+        content: '';
+        height: 5px;
+        width: 80%;
+        background: var(--linearGradient) ;
+        top: -5px;
+        left: 50%;
+        right: 50%;
+        transform: translate(-50%);
+    
+    }
+  
+    .galleryContainer{
+        .imgDiv, .small_imgDiv{
+            position: relative;
+            height: 150px;
+            width: auto;
+            overflow: hidden;
+            &:hover{
+                img{
+                    transform: scale(1.1);
+                }
+            }
+            .iconDiv{
+                position: absolute;
+                padding: 10px;
+                align-items: center;
+                justify-content: center;
+                bottom: 10%;
+                left: 5%;
+                .icon{
+                    background: var(--bgColor);
+                    color: var(--whiteColor);
+                    padding: 5px;
+                 }
+                 span{
+                    padding: 5px 7px;
+                    background: var(--primaryColor);
+                    color: var(--whiteColor);
+                    font-size: 16px;
+                    transform: translateX(-1.5px);
+                    font-weight: 700;
+ 
+                }
+            }
+ 
+             img{
+                 height: 100%;
+                 width: 100%;
+                 object-fit: cover;
+             }
+            }
+        .mainImage{
+            .imgDiv{
+                height: 200px;
+                overflow: hidden;
+
+            }
+           .infoDiv{
+               height: max-content;
+               background: var(--linearGradient);
+               color: var(--whiteColor);
+               width: 100%;
+               padding: 1rem ;
+              .honor{
+                  display: block;
+                  font-weight: 700;
+                  font-size: 15px;
+                  padding-bottom: 10px;
+              }
+              
+           }
+        }
+    }
+}
+
+// Fun zone sccs =================================================>
+.funZone{
+    position: relative;
+    border-top: 20px solid var(--primaryColor);
+    
+    &::after{
+        position: absolute;
+        content: '';
+        height: 5px;
+        width: 80%;
+        background: var(--linearGradient) ;
+        top: -5px;
+        left: 50%;
+        right: 50%;
+        transform: translate(-50%);
+    
+    }
+   
+
+    .singleComment{
+        position: relative;
+        width: 100%;
+        height: 150px;
+        background: var(--greyColor);
+        padding: 10px;
+        border-radius: var(--borderRadius);
+        border-bottom: 2px solid;
+        border-image-slice: 1;
+        border-image-source: var(--linearGradient);
+        overflow: hidden;
+        .topDiv{
+            justify-content: space-between;
+            margin-bottom:10px ;
+            padding: 0 5px;
+            .commentImg{
+                height: 50px;
+                width: 50px;
+                border-radius: 50%;
+                border: 5px solid var(--whiteColor);
+                overflow: hidden;
+                img{
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                }
+
+            }
+            .commentorName{
+                font-weight: 700;
+                flex: 2;
+                margin-left: 1rem;
+            }
+            .iconDiv{
+                position: absolute;
+                top: -5rem;
+                right: -3rem;
+                .icon{
+                    font-size: 10rem;
+                    font-weight: 700;
+                    opacity: 1;
+                    color: rgb(233, 233, 233);
+                }
+            }
+        }
+        .commentTxt{
+            font-style: italic;
+        }
+    }
+
+    .newComment{
+        margin-top: 1rem;
+        width: 100%;
+        .formBanner{
+            height: 200px;
+            width: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.5),rgba(0, 0, 0, 0.791)), url(./assets/team.jpg);
+            background-position: center;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: auto;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+          .bannerText{
+              color: var(--whiteColor);
+              text-align: center;
+              h2{
+                  color: var(--whiteColor);
+                  font-weight: 600;
+                  font-size: 30px;
+              }
+              p{
+                  letter-spacing: 5px;
+                  text-transform: uppercase;
+              }
+              .icon{
+                  font-size: 25px;
+              }
+          }
+        }
+
+        .form{
+            padding: 20px 0;
+            width: 100%;
+           
+            .row{
+                margin-bottom: 10px;
+               label{
+                   display: block;
+                   padding-bottom: 5px;
+                   font-size: var(--fontSize_13px);
+                   font-weight: 500;
+               }
+               input, textarea{
+                padding: 10px;
+                border-radius: var(--borderRadius);
+                border: 2px solid transparent;
+                background: var(--greyColor);
+                width: 100%;
+                font-size: 13px;
+                font-weight: 500;
+
+                &:focus{
+                  outline: 2px solid var(--secondaryColor);
+                }
+               
+            }
+            #image{
+              display: none;
+            }
+            .image{
+                padding: 5px 0;
+                &:hover{
+                  color: var(--secondaryColor);
+                }
+            }
+            .submitBtn{
+                background: var(--primaryColor);
+                color: var(--whiteColor);
+                &:hover{
+                    background: var(--secondaryColor);
+                    
+                }
+            }
+            }
+        }
+    }
+    
+}
+
+// footerSection ============================================================>
+.footer{
+    width: 100%;
+    margin: auto;
+    background: linear-gradient(-230deg, #37003c 1%,#963bfe 200%);
+    .footerContent{
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+    }
+    .col{
+        display: grid;
+        gap: 3px;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+       
+    }
+    .firstCol{
+        padding: 1rem;
+        text-align: center;
+        .footerLogo{
+            filter: invert(1);
+            width: 100px;
+            margin: 10px auto;
+        }
+        .text{
+            color: var(--whiteColor);
+            display: inline-block;
+            padding-bottom: 5px;
+            font-weight: 600;
+            border-bottom: 1px solid var(--whiteColor);
+        }
+        p{
+            color: var(--whiteColor);
+            padding: .5rem 0;
+        }
+        .socials{
+            width: 100%;
+            margin: auto;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            .icon{
+                color: var(--whiteColor);
+                font-size: 20px;
+                &:hover{
+                    color: var(--secondaryColor);
+                }
+
+            }
+        }
+    }
+    h6{
+        font-size: 13px;
+        color: var(--whiteColor);
+        padding-bottom: 5px;
+    }
+    .footerLink{
+        color: var(--whiteColor);
+        font-size: 14px;
+        &:hover{
+            color: var(--secondaryColor);
+            transform: translateX(7px);
+        }
+        
+    }
+
+    .copyRight{
+        width: 100%;
+        margin-top: 2rem;
+        background: var(--whiteColor);
+        padding: 1rem;
+        .copyRightDiv{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 10px;
+        }
+        .left{
+            font-weight: 700;
+        }
+        .middle{
+            max-width: 600px;
+            
+        }
+    }
+}
+
+// ----SINGLE PAGES SCSS STARTS HERE ------->
+
+// ABOUT PAGE CSS ============================================>
+.aboutBanner{
+    padding: 4rem 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.778), rgba(0, 0, 0, 0.671)), url(./assets/klImages/trophy.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    
+    .bannerText{
+        color: var(--whiteColor);
+        text-align: center;
+        margin: 1.5rem 0;
+        h2{
+            color: var(--whiteColor);
+            font-weight: 600;
+            font-size: 30px;
+        }
+        p{
+            letter-spacing: 5px;
+            text-transform: uppercase;
+        }
+        .icon{
+            font-size: 25px;
+        }
+    }
+
+    .aboutButton{
+        position: absolute;
+        bottom: 0;
+        gap: 10px;
+        a{
+            padding:10px 15px;
+            background: var(--primaryColor);
+            color: var(--whiteColor);
+            border-top-right-radius: var(--borderRadius);
+            border-top-left-radius: var(--borderRadius);
+            font-weight: 500;
+            font-size: 14px;
+            &:hover{
+                background: var(--whiteColor);
+                color: var(--primaryColor);
+            }
+
+        }
+        .aboutBtnActive{
+            background: var(--whiteColor);
+            color: var(--primaryColor);
+        }
+        .activeBtn{
+            background-color: var(--whiteColor);
+            color: var(--primaryColor); 
+        }
+    }
+
+}
+.mainInfo{
+    .sectionHeader{
+        justify-content: space-between;
+    }
+    
+}
+.records{
+    position: relative;
+    border-top: 20px solid var(--primaryColor);
+    
+    &::after{
+        position: absolute;
+        content: '';
+        height: 5px;
+        width: 80%;
+        background: var(--linearGradient) ;
+        top: -5px;
+        left: 50%;
+        right: 50%;
+        transform: translate(-50%);
+    
+    }
+    .sectionHeader{
+        justify-content: space-between;
+    }
+    .seasonMenu {
+        margin-bottom: 1rem;
+        overflow-x: none;
+        .seasonList {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 5px;
+          
+    
+          .season {
+              background: var(--primaryColor);
+            color: var(--whiteColor);
+            font-size: var(--fontSize_13px);
+            font-weight: 500;
+            padding: 10px 0;
+            cursor: pointer;
+            border-radius: var(--borderRadius);
+            width: 4rem;
+            text-align: center;
+            border: 1px dashed transparent;
+            &:hover{
+                background-color: var(--whiteColor);
+                color: var(--primaryColor);
+                border: 1px dashed var(--primaryColor);
+            }
+          }
+          .activeBtn{
+            background-color: var(--whiteColor);
+            color: var(--primaryColor);
+            border: 1px dashed var(--primaryColor);
+          }
+        }
+      }
+    .seasonRecords{
+        .singleSeason .champion, .mvp, .seasonTopScorer, .gk{
+            .imgDiv{
+                position: relative;
+                height: 180px;
+                width: auto;
+                overflow: hidden;
+                overflow: hidden;
+                border-radius: var(--borderRadius);
+                &:hover{
+                    img{
+                        transform: scale(1.1);
+                    }
+                }
+                img{
+                    position: absolute;
+                    width: 100%;
+                    height: fit-content;
+                    top: 0;
+                    right: 0;
+                    left: 0;
+                    
+                    
+                }
+                .imgTag{
+                    position: absolute;
+                    background: var(--primaryColor);
+                    color: var(--whiteColor);
+                    padding: 5px 10px;
+                    border-bottom-right-radius: var(--borderRadius);
+                }
+            }
+            .infoDiv{
+                position: relative;
+                background: var(--linearGradient);
+                padding: 1rem;
+                color: white;
+                width: 100%;
+                height: max-content;
+                &::after{
+                    content: '';
+                    position: absolute;
+                    height: 5px;
+                    width: 80%;
+                    background: var(--primaryColor);
+                    bottom: -5px;
+                    right: 50%;
+                    left: 50%;
+                    transform: translate(-50%);
+                }
+                .honor{
+                    color: var(--whiteColor);
+                    display:block;
+                    font-size: 15px;
+                    font-weight: 600;
+                    padding-bottom: 10px;
+                }
+            }
+             
+        }
+    }
+    .hide{
+        display: none;
+    }
+}
+
+// Advert Section scss ===========================>
+// .advert {
+//     position: fixed;
+//     top: 0;
+//     left: 0;
+//     bottom: 0;
+//     right: 0;
+//     background: rgba(42, 40, 40, 0.871);
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     z-index: 1000;
+//     opacity: 0;
+//     transition: 0.3s ease;
+//     .advertContainer {
+//       position: relative;
+//       width: 80%;
+//       max-width: 400px;
+//       padding: 1rem;
+//       border-radius: 10px;
+//       background: rgb(250, 250, 250);
+//       .advertImgDiv {
+//         display: flex;
+//         align-items: center;
+//         justify-content: center;
+//         margin: 10px;
+//         img {
+//           width: 200px;
+//         }
+//       }
+  
+//       .advertText {
+//         padding: 2px 0;
+//         text-align: center;
+//         h2 {
+//           color: red;
+//         }
+  
+       
+//         .countdown {
+//           margin: 10px 0;
+//           padding: 10px;
+//           background: var(--blackColor);
+//           color: var(--whiteColor);
+//         }
+  
+//         .moreBtn {
+//           display: block;
+//           margin: 10px 0 0;
+//           background: var(--primaryColor);
+//           padding: 10px;
+//           font-weight: 500;
+//           cursor: pointer;
+//           color: var(--whiteColor);
+//           transition: 0.3s ease;
+//           border-radius: 3px;
+//           &:hover {
+//             letter-spacing: 1px;
+//           }
+//         }
+//       }
+  
+//       .closeIconDiv {
+//         position: absolute;
+//         background: rgb(250, 250, 250);
+//         height: 30px;
+//         width: 30px;
+//         border-radius: 50%;
+//         display: flex;
+//         align-items: center;
+//         justify-content: center;
+//         flex-direction: column;
+//         box-shadow: var(--boxShadow);
+//         // padding: 4px;
+//         top: -10px;
+//         right: 0;
+//       }
+//     }
+//   }
+
+
+//   CLUBS PAGE CSS====================================================================>
+.clubsSection, .singleClubPage{
+    
+    .sectionHeader{
+     width: 100%;
+     margin: auto auto 2rem;
+     padding: 10px ;
+     background: var(--primaryColor);
+     justify-content: space-between;
+     align-items: center;
+     .seasonYear{
+         font-weight: 600;
+         font-size: 20px;
+         color: var(--whiteColor);
+     }
+     .logoDiv{
+         img{
+             width: 80px;
+             height: auto;
+             filter: invert(1);
+         }
+     }
+    }
+    .clubsContainer{
+        .singleClub, .singlePlayer{
+            width: 100%;
+           padding: 10px 0 ;
+           border-bottom: 1px solid rgb(205, 204, 204);
+            .singleClubTop{
+                width: 100%;
+                justify-content: space-between;
+                
+                .leftRow{
+                    .teamLogoDiv{
+                        margin-right: 1rem;
+                        height: 40px;
+                        width: 40px;
+                        
+                        img{
+                            height: 100%;
+                            width: 100%;
+                            object-fit: cover;
+                        }
+    
+                     }
+                     .clubName{
+                         .name{
+                             font-weight: 600;
+                             font-size: 15px;
+                             display: block;
+                             color: var(--primaryColor);
+                         }
+                     }
+                }
+                .rightRow{
+                    .icon{
+                        font-size: 25px;
+                        transition: .3s ease;
+                        &:hover{
+                            color: var(--secondaryColor);
+                        }
+                    }
+                }
+                .transform{
+                    transform: rotate(180deg);
+                }
+            }
+            &.active{
+                border-bottom: 5px solid;
+                border-image-slice: 1;
+                border-image-source: var(--linearGradient);
+                .singleClubHidden{
+                    height: max-content;
+                    padding: 15px 0;
+                    
+                }
+                .rightRow{
+                    transform: rotate(180deg);
+                    .icon{
+                        color: var(--secondaryColor);
+                    }
+                }
+
+            }
+            .singleClubHidden{
+                display: grid;
+                height: 0;
+                gap: 10px;
+                overflow-y: auto;
+                transition: .3s ease-in-out;
+                .title{
+                    font-weight: 700;
+                }
+                .stat{
+                    display: grid;
+                    .res{
+                        display: block
+                        ;
+                        padding: 5px 0 0;
+                        font-weight: 600;
+                    }
+                }
+               .statFlex{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    .res{
+                        padding: 5px 0 0;
+                        font-weight: 600;
+                    }
+                }
+               
+            }
+          
+
+           
+        }
+        .allPlayersBtn{
+            background: var(--primaryColor);
+            color: var(--whiteColor);
+            width: 80%;
+            text-align: center;
+            border: none;
+            &:hover{
+                background: var(--linearGradient);
+            }
+        }
+        .hiddenPlayers{
+            display: grid;
+            height: 0;
+            overflow: hidden;
+            transition: height 0.3s ease-in-out;
+        }
+        .showAll{
+            transition: .3s ease;
+            height: max-content;
+        }
+
+
+    }
+
+    
+}
+
+
+// SINGLE CLUB PAGE (This section scss is inheriting some scss from ClubSection above.) ==================================================>
+.singleClubBanner{
+    padding: 4rem 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.778), rgba(0, 0, 0, 0.671)), url(./assets/klImages/teamImage3.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+}
+.singleClubPageBannerInfo{ 
+    
+      
+    
+    .clubImageDiv{
+        height: 140px;
+        width: 140px;
+        border: 1px dashed var(--greyColor);
+        overflow: hidden;
+        border-radius: 50%;
+        margin: 0 auto 10px;
+        padding: 10px;
+        
+       
+    }
+}
+.singleClubPage{
+    .mainInfo{
+        margin: 1rem 0;
+        .clubDesc{
+            padding: 1.5rem;
+        }
+    }
+    .sectionHeader{
+        margin: auto auto .5rem;
+    }
+    .singleClub{
+        width: 100%;
+       padding: 0px 0 ;
+       border-bottom: 1px solid rgb(205, 204, 204);
+
+        .singleClubStat{
+            display: grid;
+            height: max-content;
+            padding:  0;
+            gap: 10px;
+            overflow-y: auto;
+            transition: .3s ease-in-out;
+            .title{
+                font-weight: 700;
+            }
+            .stat, .statFlex{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                .res{
+                    padding: 5px 0 0;
+                    font-weight: 600;
+                }
+            }
+           
+        }
+
+    }
+}
+
+
+// Fixtures Page Scss ===============================>
+.fixturesSection{
+    .singleFixture:not(.singleFixture:nth-child(1)){
+        border-top: 1px solid #e7e7e7;
+    }
+
+    
+}
+
+
+// Results Scss Section =====================================>
+.menDiv{
+    .topScorer, .pow, .tow{
+        width: 100%;
+        display: grid;
+        align-items: center;
+        justify-content: space-evenly;
+        text-align: center;
+        border-radius: var(--borderRadius);
+        box-shadow: var(--boxShadow);
+        border-top: 7px solid;
+        border-image-slice: 1;
+        padding-top: 1rem;
+        border-image-source: var(--linearGradient);
+        overflow: hidden;
+
+
+            .matchNumber{
+                display: block;
+                padding: 10px;
+                font-size: var(--fontSize_13px);
+                font-weight: 600;
+                color: var(--secondaryColor);
+            }
+            small{
+               
+                opacity: .7;
+                font-size: var(--fontSize_13px);
+            
+               
+            }
+            .menTitle{
+                display: block;
+                padding:  5px 0;
+                background: var(--greyColor);
+                margin: 1rem 0;
+                border-radius: var(--borderRadius);
+                width: 100%;
+                font-weight: 600;
+                font-size: var(--fontSize_13px);
+  
+            }
+        
+       .imgDiv{
+        position: relative;
+        height: 180px;
+        width: auto;
+        overflow: hidden;
+        &:hover{
+            img{
+                transform: scale(1.1);
+            }
+        }
+        img{
+            position: absolute;
+            width: 100%;
+            height: fit-content;
+            top: 0;
+            right: 0;
+            left: 0;
+            
+            
+        }
+       }
+       .infoDiv{
+           background: var(--linearGradient);
+           color: var(--whiteColor);
+           width: 100%;
+          
+           padding: 1rem ;
+           .honor{
+               font-weight: 600;
+               font-size: 16px;
+               float: left;
+               text-align: start;
+               margin-bottom: 10px;
+           }
+           .topScorerText{
+               text-align: start;
+               float: left;
+           }
+          
+       }
+    }
+    .tow{
+        
+        .menTitle{
+            display: block;
+            padding:  5px 0;
+            background: var(--greyColor);
+            margin: 1rem 0;
+            border-radius: var(--borderRadius);
+            width: 100%;
+            font-weight: 600;
+            font-size: var(--fontSize_13px);
+            text-align: center;
+
+        }
+        .imgsDiv{
+            width: 100%;
+            display: grid;
+            margin: auto;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            grid-template-columns:repeat(3, 1fr) ;
+            gap: 10px;
+          
+            .singleplayer{
+                position: relative;
+                height: 100px;
+                width: 90px;
+                background: #11b6d0;
+                border-radius: var(--borderRadius);
+                overflow: hidden;
+                &:hover{
+                    .playerName{
+                        top: 0;
+                        transition: .3s ease;
+                    }
+                }
+                .playerName{
+                    position: absolute;
+                    top: 100%;
+                    justify-content: center;
+                    align-items: center;
+                    margin: auto;
+                    height: 100%;
+                    width: 100%;
+                    background: linear-gradient(to top, #37003c,#37003c28);
+                    .name{
+                        color: var(--whiteColor);
+                        font-weight: 500;
+                        text-align: center;
+                        blockquote{
+                            font-weight: 700;
+                            font-size: 15px;
+                        }
+                    }
+                }
+                .playerImg{
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    top: 0;
+                    right: 0;
+                    left: 0;
+                    bottom: 0;
+                }
+            }
+
+        }
+    }
+}
+
+//Twitter Page Section Scss =================================>
+.twitterSection{
+    position: relative;
+    border-top: 20px solid var(--primaryColor);
+    
+    &::after{
+        position: absolute;
+        content: '';
+        height: 5px;
+        width: 80%;
+        background: var(--linearGradient) ;
+        top: -5px;
+        left: 50%;
+        right: 50%;
+        transform: translate(-50%);
+    
+    }
+    .pageDiv{
+        position: relative;
+        height: 400px;
+        overflow-y: scroll;
+        border-radius: var(--borderRadius);
+       
+    }
+
+    ::-webkit-scrollbar{
+        width: 5px;
+        background: var(--greyColor);
+      }
+      
+      ::-webkit-scrollbar-thumb{
+        border-radius: var(--borderRadius);
+        background-color: var(--secondaryColor);
+    }
+}
+
+
+// Login Page Scss ================================================>
+.loginSection{
+    padding: .5rem;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem auto;
+
+    .formContainer{
+    width: 270px;
+    height: 450px;
+    padding: 0 1rem;
+    border-radius: 3px;
+    border: 1px solid rgb(234, 234, 234);
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    
+    background: whitesmoke;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+    z-index: 1;
+
+    .overlay{
+      position: absolute;
+      content: '';
+      height: 500px;
+      width: 500px;
+      border-radius: 50%;
+      z-index: 2;
+      top: -20%;
+      background: var(--whiteColor);
+      box-shadow: var(--boxShadow);
+    }
+
+        form{
+            z-index: 1000;
+            width: 100%;
+            transform: translateY(-2rem);
+            .rows{
+                .row{
+                   label{
+                       font-size: var(--fontSize_13px);
+                       font-weight: 500;
+                       display: block;
+                       padding-bottom: .285rem;
+                   } 
+                   input, select{
+                    padding: 10px;
+                    border-radius: var(--borderRadius);
+                    border: 2px solid transparent;
+                    background: var(--greyColor);
+                    width: 100%;
+                    font-size: 13px;
+                    font-weight: 500;
+
+                    &::placeholder{
+                        opacity: .5;
+                    }
+
+                    &:focus{
+                      outline: 2px solid var(--secondaryColor);
+                    }
+                    
+                    option{
+                        background: var(--primaryColor);
+                        color: var(--whiteColor);
+                        
+                    }
+                   }
+                   .submitBtn{
+                    background: var(--primaryColor);
+                    color: var(--whiteColor);
+                    &:hover{
+                        background: var(--secondaryColor);
+                        
+                    }
+                    }
+                    .registerLink{
+                        display: block;
+                        text-align: center;
+                        margin-top: 1rem;
+                        a{  font-weight: 500;
+                            color: var(--secondaryColor);
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+.bodyFlex{
+    position: relative;
+    width: 100%;
+    max-height: max-content;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    column-gap: 1.5rem;
+}
+.sideBody{
+    display: none;
+    height: 100%;
+    background: rgba(242, 242, 242, 0.453);
+    padding-top: 9rem ;
+    max-width: 30%;
+
+    .twitterSection{
+        height: 100%;
+        .pageDiv{
+            position: relative;
+            max-height: 2000px;
+            overflow-y: scroll;
+            border-radius: var(--borderRadius);
+       }
+    }
+
+    .postImg{
+        height: 100px;
+        width: 150px;
+        background: var(--greyColor);
+        padding: .5rem;
+       
+    }
+    
+}
+.mainBody{
+    width: 100%;
+}
+
+
+
+// MEDIA QUERIES STARTS HERE ============================>
+
+@media screen and (min-width:400px){
+  .mainBody{
+    .gallerySection{
+        .galleryContainer .smallImages{
+            grid-template-columns: repeat(2,1fr);
+        }
+    }
+  }
+}
+
+@media screen and (min-width: 560px){
+    .header .topSection{
+        display: flex;
+    }
+
+    .mainBody{
+
+        .aboutBanner{
+            padding: 9rem 0 4rem;
+        }
+
+        .show{
+            top: 22rem !important;
+        }
+
+        .bannerSection{
+            padding: 6rem 3rem 1rem;
+        }
+
+        .weeklyTeam {
+            padding-bottom: 5rem;
+            .menDiv{
+                position: relative;
+                grid-template-columns: repeat(2,1fr);
+            }
+        
+            .menDiv .tow{
+                grid-column: 1/3;
+            }
+        
+            .detailsLink{
+            position: absolute;
+            right: 0;
+            bottom: -30px;
+            
+            }
+        }
+
+        .newsSection{
+            .newContent{
+                grid-template-columns: repeat(2,1fr);
+            }
+        }
+
+        .gallerySection{
+            .galleryContainer .smallImages{
+                grid-template-columns: repeat(2,1fr);
+            }
+        }
+
+        
+        // ABOUT SECTION @560PX
+        .records{
+            .singleSeason{
+                grid-template-columns: repeat(2,1fr);
+            }
+        }
+
+        // CLUBS SECTION @560PX
+        // .clubsSection{
+        //     // .clubsContainer{
+        //     //     display: grid;
+        //     //     grid-template-columns: repeat(2,1fr);
+        //     //    column-gap: 1rem;
+        //     // }
+        // }
+
+            .table__WeekPlayers{ // this is not working please find time and check what happened===========>
+                .menDiv{
+                    .tow{
+                        .imgsDiv{
+                            .singlePlayer{
+                                height: 300px !important;
+                                width: 300px !important;
+                            }
+                        }
+                    }
+                }
+            }
+
+
+        // FUNZONE PAGE @560PX
+            .funZone{
+                .sectionContent{
+                    .comments{
+                        grid-template-columns: repeat(2,1fr);
+                    }
+                }
+            }
+
+            // LOGIN SECTION @560PX
+            .loginSection{
+                .formContainer{
+                width: 360px;
+            }
+            }
+    }
+
+    .footer{
+        .footerContent{
+            grid-template-columns: repeat(3,1fr) ;
+            .firstCol{
+                grid-column: 1/4;
+                grid-row: 1/2;
+            }
+        }
+    }
+
+}
+
+
+@media screen and (min-width: 680px){
+   .mainBody{
+    .section{
+        padding: 4.5rem 0 2rem;
+    }
+    .container{
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+    .logSection{
+        .sectionContent{
+            grid-template-columns: repeat(2,1fr);
+            .tableDiv{
+                grid-column: 1/3;
+            }
+        }
+    }
+
+    .allFixtures, .allResults{
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .table__WeekPlayers{
+        .weekPlayers{
+            padding: 4.5rem 0 2rem;
+            .menDiv{
+                display: grid;
+                grid-template-columns: repeat(2,1fr);
+            }
+        }
+    }
+   }
+}
+
+@media screen and (min-width: 769px){
+    .header{
+        .lowerSection{
+            .navBarBtn{
+                display: none;
+            }
+            .navBar, .navList{
+                display: flex;
+                flex-direction:row;
+                align-items: center;
+                column-gap: 1rem;
+                small{
+                    display: none;
+                }
+
+                .navLink{
+                    color: var(--whiteColor);
+                    &:hover{
+                        color: var(--secondaryColor);
+                    }
+                }
+
+                .button{
+                    width: max-content;
+                    text-align: center;
+                    background: var(--whiteColor);
+                    &:hover{
+                        background: var(--secondaryColor);
+                    }
+                    a{
+                        color: var(--primaryColor);
+                    }
+                }
+            }
+        }
+    }
+
+  .mainBody{
+
+    .aboutBanner{
+        padding: 13rem 0 6rem;
+    }
+
+    .weeklyTeam {
+        padding-bottom: 7rem;
+    }
+
+
+    .newComment{
+        .formContainer{
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+
+            .formBanner{
+                height: 100%;
+            }
+            .form{
+                padding: 0 1rem;
+            }
+        }
+    }
+
+    .gallerySection{
+        .galleryContainer{
+            grid-template-columns: repeat(2,1fr);
+            .mainImage{
+                height: 100%;
+            }
+        }
+    }
+  }
+}
+
+@media screen and (min-width: 900px){
+   .mainBody{
+    .aboutSection{
+        .sectionContainer{
+            grid-template-columns: repeat(2,1fr);
+            align-items: center;
+        }
+    }
+
+    .weeklyTeam {
+        .menDiv{
+            grid-template-columns: repeat(3,1fr);
+        }
+         .menDiv .tow{
+            grid-column: initial;
+        }
+    }
+
+    // FUNZONE PAGE @560PX
+.funZone{
+    .sectionContent{
+        .comments{
+            grid-template-columns: repeat(3,1fr);
+        }
+    }
+}
+
+    // .logSection{
+    //     .sectionContent{
+    //         grid-template-columns: repeat(3,1fr);
+    //         .tableDiv{
+    //             grid-column: initial;
+    //         }
+    //     }
+    // }
+   }
+}
+
+@media screen and (min-width: 1240px){
+    .header{
+        .lowerSection{
+
+            padding: 10px 5rem;
+        }
+    }
+
+    .bodyFlex{
+        width: 90%;
+    }
+    .mainBody{
+      width: 70%;
+
+    :root{
+        --fontSize_13px: 13px;
+    }
+        ::html{
+            font-size: 90%;
+        }
+        .section{
+            padding:  4rem 0;
+        }
+
+        .container{
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+        }
+
+        .bannerSection{
+            .title{
+                font-size: 40px;
+            }
+            .subTitle{
+                font-size: 20px;
+
+            }
+        }
+
+        .middleBanner{
+            .sectionText{
+                max-width: 400px;
+                h1{
+                    font-size: 30px;
+
+                }
+            }
+        }
+        
+    }
+
+    .sideBody{
+        display: block;
+    }
+    
+    .footer{
+        margin: auto;
+        .footerContent{
+            width: 60%;
+            padding: 2rem 0;
+            grid-template-columns: repeat(4,1fr) ;
+            .firstCol{
+                grid-column: initial;
+                grid-row: initial;
+            }
+        }
+
+        .copyRight{
+            .copyRightDiv{
+                width: 80%;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                margin: auto;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 2000px){
+    body{
+        zoom: 2;
+    }
+}
+
+
+::-webkit-scrollbar{
+    width: 8px;
+    background: var(--greyColor);
+  }
+  
+  ::-webkit-scrollbar-thumb{
+    border-radius: var(--borderRadius);
+    background-color: var(--secondaryColor);
+    cursor: pointer;
+}
+
+::selection{
+    background: var(--primaryColor);
+    color: var(--whiteColor);
+}
